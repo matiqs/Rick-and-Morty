@@ -1,0 +1,18 @@
+.sidebar {
+  border-right: 2px solid #00dcbe;
+  background-color: #121919;
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;
+  transition: 350ms;
+}

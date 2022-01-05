@@ -1,0 +1,25 @@
+.color0 {
+  color: #121919;
+}
+.color1 {
+  color: #004054;
+}
+.color2 {
+  color: #005362;
+}
+.color3 {
+  color: #00727b;
+}
+.color4 {
+  color: #009f9a;
+}
+.color5 {
+  color: #00dcbe;
+}
+.color6 {
+  color: #ffd100;
+}
+
+.color7 {
+  color: #ec3636;
+}
