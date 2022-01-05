@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import style from "./Navbar.module.css";
-// import Logo from "../../public/assets/images/Logo.png";
+import Logo from "../../public/assets/images/logo.png";
 import SidebarLogo from "../../public/assets/images/sidebar-logo.png";
 import { NavbarContainer, SideBarItem, SideBarMenu } from "./StyledNavbar";
 import * as FaIcons from "react-icons/fa";
@@ -20,7 +20,7 @@ const Navbar = () => {
       <NavbarContainer>
         <FaIcons.FaBars onClick={showSideBar} />
 
-        {/* <Image src={Logo} width={220} height={60} alt="" /> */}
+        <Image src={Logo} width={220} height={60} alt="" />
       </NavbarContainer>
       <nav
         className={sideBar ? `${style.sidebar} ${style.active}` : style.sidebar}
