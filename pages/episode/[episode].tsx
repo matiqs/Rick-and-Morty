@@ -28,7 +28,7 @@ const Episode = () => {
         <StyledDetailsElement>
           <h1>{`"${episode.name}"`}</h1>
           <p>
-            <b>Episodio: </b>
+            <b>Episode: </b>
             {episode.episode}
           </p>
         </StyledDetailsElement>
@@ -40,7 +40,7 @@ const Episode = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
-          <h2>Personajes que aparecen</h2>
+          <h2>Characters that appear</h2>
           {episode.characters.map((element, index) => {
             return (
               <StyledItem key={index}>
@@ -49,7 +49,7 @@ const Episode = () => {
                   <b>{element.name}</b>
                 </p>
                 <Link href={`/character/${element.id}`} passHref>
-                  <button>Ver detalle</button>
+                  <button>View detail</button>
                 </Link>
               </StyledItem>
             );
@@ -58,7 +58,7 @@ const Episode = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <p>
-          <b>Fecha de creacion: </b>
+          <b>Creation date:</b>
           {episode.created}
         </p>
       </StyledDetailsSection>

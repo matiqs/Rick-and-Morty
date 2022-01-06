@@ -69,29 +69,29 @@ const Character = () => {
 
           <Toaster />
           <DetailsItem>
-            <p>ESTADO: {character.status}</p>
+            <p>STATUS: {character.status}</p>
             <AliveIcon status={character.status} />
           </DetailsItem>
           <DetailsItem>
-            <p>ESPECIE: {character.species}</p>
+            <p>SPECIE: {character.species}</p>
           </DetailsItem>
           <DetailsItem>
-            <p>TIPO: {character.type ? character.type : "unknown"} </p>
+            <p>TYPE: {character.type ? character.type : "unknown"} </p>
           </DetailsItem>
           <DetailsItem>
-            <p>GENERO: {character.gender}</p>
+            <p>GENDER: {character.gender}</p>
           </DetailsItem>
           <DetailsItem>
-            <p>ORIGEN: {character.origin.name}</p>
+            <p>ORIGIN: {character.origin.name}</p>
           </DetailsItem>
           <DetailsItem>
-            <p>UBICACION: {character.location.name}</p>
+            <p>LOCATION: {character.location.name}</p>
           </DetailsItem>
         </DetailsCharacter>
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
-          <h2>Episodios en donde aparece:</h2>
+          <h2>Episodes where it appears:</h2>
           {character.episode.map((element, index) => {
             return (
               <StyledItem key={index}>
@@ -109,7 +109,7 @@ const Character = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <p>
-          <b>Fecha de creacion: </b>
+          <b>Creation date: </b>
           {character.created}
         </p>
       </StyledDetailsSection>

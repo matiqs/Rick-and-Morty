@@ -50,7 +50,7 @@ const Location = () => {
                   <b>{element.name}</b>
                 </p>
                 <Link href={`/character/${element.id}`} passHref>
-                  <button>Ver detalle</button>
+                  <button>View detail</button>
                 </Link>
               </StyledItem>
             );
@@ -59,7 +59,7 @@ const Location = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <p>
-          <b>Fecha de creacion: </b>
+          <b>Creation date: </b>
           {location.created}
         </p>
       </StyledDetailsSection>
