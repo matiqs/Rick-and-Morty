@@ -16,7 +16,7 @@ export const GET_ALL_LOCATIONS = (page: number, filter: string) => gql`
   }
 `;
 
-export const GET_LOCATION = (id: string) => gql`
+export const GET_LOCATION = (id: number) => gql`
   query {
     location(id: ${id}) {
         id
