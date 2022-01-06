@@ -13,7 +13,7 @@ query {
 }
 `;
 
-export const GET_CHARACTER = (id) => gql`
+export const GET_CHARACTER = (id: string) => gql`
   query {
     character(id: ${id}) {
       id

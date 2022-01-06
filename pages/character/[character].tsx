@@ -70,23 +70,35 @@ const DetailCharacter = () => {
 
           <Toaster />
           <DetailsItem>
-            <p>STATUS: {character.status}</p>
+            <p>
+              <b>STATUS</b> {character.status}
+            </p>
             <AliveIcon status={character.status} />
           </DetailsItem>
           <DetailsItem>
-            <p>SPECIE: {character.species}</p>
+            <p>
+              <b>SPECIES:</b> {character.species}
+            </p>
           </DetailsItem>
           <DetailsItem>
-            <p>TYPE: {character.type ? character.type : "unknown"} </p>
+            <p>
+              <b>TYPE:</b> {character.type ? character.type : "unknown"}{" "}
+            </p>
           </DetailsItem>
           <DetailsItem>
-            <p>GENDER: {character.gender}</p>
+            <p>
+              <b>GENDER</b>: {character.gender}
+            </p>
           </DetailsItem>
           <DetailsItem>
-            <p>ORIGIN: {character.origin.name}</p>
+            <p>
+              <b>ORIGIN</b>: {character.origin.name}
+            </p>
           </DetailsItem>
           <DetailsItem>
-            <p>LOCATION: {character.location.name}</p>
+            <p>
+              <b>LOCATION</b>: {character.location.name}
+            </p>
           </DetailsItem>
         </DetailsCharacter>
       </StyledDetailsSection>
