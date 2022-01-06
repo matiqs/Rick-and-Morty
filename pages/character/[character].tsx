@@ -27,6 +27,7 @@ const DetailCharacter = () => {
   const { favorites, toggleFavorite } = useContext(FavContext);
   const { Toaster, toastSucces, toastWarning, toastError } = useToast();
   const router = useRouter();
+
   const { data, loading, error } = useQuery(
     GET_CHARACTER(router.query.character)
   );
@@ -50,6 +51,7 @@ const DetailCharacter = () => {
   return (
     <StyledDetailsContainer>
       <StyledDetailsSection>
+        {console.log(typeof router.query.character)}
         <Image
           src={character.image}
           width={400}

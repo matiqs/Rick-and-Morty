@@ -54,9 +54,6 @@ export default function Home() {
           {favorites
             .slice(index - 10, index)
             .map((element: Character, index: number) => {
-              {
-                console.log(element);
-              }
               return (
                 <div key={index}>
                   <FavoriteCard character={element} />
