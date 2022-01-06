@@ -11,7 +11,7 @@ import {
   StyledDashboardHeader,
   StyledDashboardBody,
 } from "../styles/Styled_Index";
-import favicon from "../public/assets/images/favicon.png";
+import { Character } from "../models/models";
 
 export default function Home() {
   const { favorites } = useContext(FavContext);
@@ -49,13 +49,18 @@ export default function Home() {
           </Link>
         </StyledDashboardHeader>
         <StyledDashboardBody>
-          {favorites.slice(index - 10, index).map((element, index) => {
-            return (
-              <div key={index}>
-                <FavoriteCard character={element} />
-              </div>
-            );
-          })}
+          {favorites
+            .slice(index - 10, index)
+            .map((element: Character, index: number) => {
+              {
+                console.log(element);
+              }
+              return (
+                <div key={index}>
+                  <FavoriteCard character={element} />
+                </div>
+              );
+            })}
         </StyledDashboardBody>
       </StyledDashboardContainer>
       <Pagination nextPage={nextPage} returnPage={returnPage} />

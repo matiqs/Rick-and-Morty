@@ -11,8 +11,9 @@ import {
   StyledItemsContainer,
 } from "../../styles/Styled_globals";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import { Character } from "../../models/models";
 
-const Location = () => {
+const DetailLocation = () => {
   const router = useRouter();
   const { data, loading, error } = useQuery(
     GET_LOCATION(router.query.location)
@@ -42,7 +43,7 @@ const Location = () => {
       <StyledDetailsSection>
         <StyledItemsContainer>
           <h2>Residents</h2>
-          {location.residents.map((element, index) => {
+          {location.residents.map((element: Character, index: number) => {
             return (
               <StyledItem key={index}>
                 <Image src={element.image} width={60} height={60} alt="" />
@@ -66,4 +67,4 @@ const Location = () => {
     </StyledDetailsContainer>
   );
 };
-export default Location;
+export default DetailLocation;

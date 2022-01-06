@@ -1,4 +1,4 @@
-const { useState, useEffect } = require("react");
+const { useState } = require("react");
 
 export const usePagination = () => {
   const [page, setPage] = useState(1);

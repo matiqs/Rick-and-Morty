@@ -4,8 +4,9 @@ import { FavContextProvider } from "../context/FavsContext";
 import Layout from "../components/Layout/Layout";
 import { ErrorBoundary } from "../errors/errorBoundary";
 import "../styles/globals.css";
+import { AppProps } from "next/dist/shared/lib/router/router";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <FavContextProvider>

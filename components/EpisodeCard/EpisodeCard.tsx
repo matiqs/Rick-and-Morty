@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Episode } from "../../models/models";
 import { StyledCardButton } from "../../styles/Styled_globals";
 import { Card } from "../EpisodeCard/StyledEpisodeCard";
 
-const EpisodeCard = ({ episode }) => {
+const EpisodeCard = ({ episode }: { episode: Episode }) => {
   return (
     <Card>
       <h2>{episode.name}</h2>

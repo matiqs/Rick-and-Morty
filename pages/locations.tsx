@@ -10,6 +10,7 @@ import LoadingPage from "../components/LoadingPage/LoadingPage";
 import { useEffect, useState } from "react";
 import { useSearched } from "../hooks/useSearched";
 import Searched from "../components/Searched/Searched";
+import { Location } from "../models/models";
 
 const Locations = () => {
   const [locations, setLocations] = useState([]);
@@ -41,7 +42,7 @@ const Locations = () => {
         handleSubmit={handleSubmit}
       />
       <StyledCardContainer>
-        {locations.map((element, index) => {
+        {locations.map((element: Location, index: number) => {
           return (
             <div key={index}>
               <LocationCard location={element} />

@@ -1,6 +1,6 @@
 import { PaginationBtn, PaginationContainer } from "./StyledPagination";
 
-const Pagination = ({ nextPage, returnPage }) => {
+const Pagination = ({ nextPage, returnPage }: any) => {
   return (
     <PaginationContainer>
       <PaginationBtn onClick={returnPage}>Back</PaginationBtn>

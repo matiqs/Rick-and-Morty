@@ -1,7 +1,8 @@
 import * as VscIcons from "react-icons/vsc";
+import { Status } from "../../models/models";
 import { StatusIcon } from "./StyledAliveIcon";
 
-const AliveIcon = ({ status }) => {
+const AliveIcon = ({ status }: { status: Status }) => {
   return (
     <>
       {status === "Alive" ? (

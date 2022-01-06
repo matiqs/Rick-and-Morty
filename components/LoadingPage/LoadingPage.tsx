@@ -6,7 +6,7 @@ const override = css`
   margin-top: 30px;
 `;
 
-const LoadingPage = ({ loading }) => {
+const LoadingPage = ({ loading }: any) => {
   return (
     <LoadingContainer>
       <h2>CARGANDO</h2>

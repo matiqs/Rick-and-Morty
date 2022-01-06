@@ -5,17 +5,18 @@ import { FavContext } from "../../context/FavsContext";
 import { StyledCardButton } from "../../styles/Styled_globals";
 import { Card, DeleteButton } from "../FavoriteCharacter/StyledFavoriteCard";
 import useToast from "../../hooks/useToast";
+import { Character } from "../../models/models";
 
-const FavoriteCard = ({ character }) => {
+const FavoriteCard = ({ character }: { character: Character }) => {
   const { removeToFavorites } = useContext(FavContext);
-  const { Toaster, toastSucces, toastError } = useToast();
+  const { Toaster, toastError } = useToast();
 
   return (
     <Card>
       <Image src={character.image} width={120} height={120} alt="" />
       <p>{character.name}</p>
       <Link href={`/character/${character.id}`} passHref>
-        <StyledCardButton>See detail</StyledCardButton>
+        <StyledCardButton>View detail</StyledCardButton>
       </Link>
       <DeleteButton onClick={() => removeToFavorites(character, toastError)}>
         Delete

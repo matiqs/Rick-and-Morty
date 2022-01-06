@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import Head from "next/head";
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   return (
     <>
       <Head>

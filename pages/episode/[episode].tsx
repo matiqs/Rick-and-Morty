@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { GET_EPISODE } from "../../apollo/queries/getEpisode";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import { Character } from "../../models/models";
 import {
   StyledDetailsContainer,
   StyledDetailsElement,
@@ -12,7 +13,7 @@ import {
   StyledItemsContainer,
 } from "../../styles/Styled_globals";
 
-const Episode = () => {
+const DetailEpisode = () => {
   const router = useRouter();
   const { data, loading, error } = useQuery(GET_EPISODE(router.query.episode));
 
@@ -41,7 +42,7 @@ const Episode = () => {
       <StyledDetailsSection>
         <StyledItemsContainer>
           <h2>Characters that appear</h2>
-          {episode.characters.map((element, index) => {
+          {episode.characters.map((element: Character, index: number) => {
             return (
               <StyledItem key={index}>
                 <Image src={element.image} width={60} height={60} alt="" />
@@ -65,4 +66,4 @@ const Episode = () => {
     </StyledDetailsContainer>
   );
 };
-export default Episode;
+export default DetailEpisode;

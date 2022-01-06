@@ -9,15 +9,16 @@ import { Card, FavContainer } from "./StyledCharacterCard";
 import * as FaIcons from "react-icons/fa";
 import useToast from "../../hooks/useToast";
 import LoadingPage from "../LoadingPage/LoadingPage";
+import { Character } from "../../models/models";
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character }: { character: Character }) => {
   const [addedToFav, setAddedToFav] = useState(false);
   const { data, loading } = useQuery(GET_CHARACTER(character.id));
   const { favorites, toggleFavorite } = useContext(FavContext);
   const { Toaster, toastSucces, toastError } = useToast();
 
   useEffect(() => {
-    if (favorites.find((c) => c.id === character.id)) {
+    if (favorites.find((c: Character) => c.id === character.id)) {
       setAddedToFav(true);
     } else {
       setAddedToFav(false);

@@ -20,8 +20,9 @@ import { FavContext } from "../../context/FavsContext";
 import * as FaIcons from "react-icons/fa";
 import useToast from "../../hooks/useToast";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
+import { Character, Episode } from "../../models/models";
 
-const Character = () => {
+const DetailCharacter = () => {
   const [addedToFav, setAddedToFav] = useState(false);
   const { favorites, toggleFavorite } = useContext(FavContext);
   const { Toaster, toastSucces, toastWarning, toastError } = useToast();
@@ -32,7 +33,7 @@ const Character = () => {
 
   useEffect(() => {
     if (data) {
-      if (favorites.find((c) => c.name === data.character.name)) {
+      if (favorites.find((c: Character) => c.name === data.character.name)) {
         setAddedToFav(true);
       } else {
         setAddedToFav(false);
@@ -92,7 +93,7 @@ const Character = () => {
       <StyledDetailsSection>
         <StyledItemsContainer>
           <h2>Episodes where it appears:</h2>
-          {character.episode.map((element, index) => {
+          {character.episode.map((element: Episode, index: number) => {
             return (
               <StyledItem key={index}>
                 <p>
@@ -117,4 +118,4 @@ const Character = () => {
   );
 };
 
-export default Character;
+export default DetailCharacter;

@@ -1,7 +1,7 @@
 import * as FaIcons from "react-icons/fa";
 import { SearchedContainer, SearchIcon, SearchInput } from "./StyledSearched";
 
-const Searched = ({ value, searchType, handleChange, handleSubmit }) => {
+const Searched = ({ value, searchType, handleChange, handleSubmit }: any) => {
   return (
     <SearchedContainer>
       <SearchInput

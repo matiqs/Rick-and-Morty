@@ -1,5 +1,5 @@
 import { Container } from "./StyledWrapper";
-const Wrapper = ({ title }) => {
+const Wrapper = ({ title }: { title: String }) => {
   return (
     <Container>
       <h1>{title}</h1>

@@ -10,6 +10,7 @@ import LoadingPage from "../components/LoadingPage/LoadingPage";
 import { useEffect, useState } from "react";
 import { useSearched } from "../hooks/useSearched";
 import Searched from "../components/Searched/Searched";
+import { Episode } from "../models/models";
 
 const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -41,7 +42,7 @@ const Episodes = () => {
         handleSubmit={handleSubmit}
       />
       <StyledCardContainer>
-        {episodes.map((element, index) => {
+        {episodes.map((element: Episode, index: number) => {
           return (
             <div key={index}>
               <EpisodeCard episode={element} />

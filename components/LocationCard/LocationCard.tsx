@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Location } from "../../models/models";
 import { StyledCardButton } from "../../styles/Styled_globals";
 import { Card } from "../LocationCard/StyledLocationCard";
 
-const LocationCard = ({ location }) => {
+const LocationCard = ({ location }: { location: Location }) => {
   return (
     <Card>
       <h1>{location.name}</h1>
