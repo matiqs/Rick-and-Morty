@@ -6,6 +6,7 @@ import { StyledCardButton } from "../../styles/Styled_globals";
 import { Card, DeleteButton } from "../FavoriteCharacter/StyledFavoriteCard";
 import useToast from "../../hooks/useToast";
 import { Character } from "../../models/models";
+import * as RiIcons from "react-icons/ri";
 
 const FavoriteCard = ({ character }: { character: Character }) => {
   const { removeToFavorites } = useContext(FavContext);
@@ -19,6 +20,7 @@ const FavoriteCard = ({ character }: { character: Character }) => {
         <StyledCardButton>View detail</StyledCardButton>
       </Link>
       <DeleteButton onClick={() => removeToFavorites(character, toastError)}>
+        <RiIcons.RiDeleteBin5Line />
         Delete
       </DeleteButton>
       <Toaster />

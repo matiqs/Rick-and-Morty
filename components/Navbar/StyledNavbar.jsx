@@ -14,6 +14,9 @@ export const NavbarContainer = styled.div`
     font-size: 2rem;
     cursor: pointer;
   }
+  img:hover {
+    cursor: pointer;
+  }
 `;
 
 export const SideBarMenu = styled.ul`

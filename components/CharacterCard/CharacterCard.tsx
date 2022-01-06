@@ -42,7 +42,7 @@ const CharacterCard = ({ character }: { character: Character }) => {
       <Toaster />
       <Image src={character.image} width={260} height={260} alt="" />
       <h2>{character.name}</h2>
-      <p>{character.species}</p>
+
       <Link href={`/character/${character.id}`} passHref>
         <StyledCardButton>View detail</StyledCardButton>
       </Link>

@@ -6,6 +6,12 @@ export const SearchedContainer = styled.div`
   justify-content: flex-end;
 `;
 
+export const Search = styled.div`
+  box-shadow: 0 0 8px #000;
+  border-radius: 5px;
+  display: flex;
+`;
+
 export const SearchInput = styled.input`
   padding: 12px;
   border: none;

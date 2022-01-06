@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import * as BsIcons from "react-icons/bs";
 import { useContext, useEffect, useState } from "react";
 import FavoriteCard from "../components/FavoriteCharacter/FavoriteCard";
 import Header from "../components/Wrapper/Wrapper";
@@ -43,6 +44,7 @@ export default function Home() {
       <Header title={"DASHBOARD"} />
       <StyledDashboardContainer>
         <StyledDashboardHeader>
+          <BsIcons.BsStars color="#ffd100" size={40} />
           <p>Characters added to favorites: {favorites.length}</p>
           <Link href={"/characters"} passHref>
             <StyledCardButton>See all characters</StyledCardButton>

@@ -18,9 +18,11 @@ export const StyledCard = styled.div`
 `;
 
 export const StyledCardButton = styled.button`
+  display: inline-block;
+  margin: 4px 2px;
   background-color: #00dcbe;
   color: #121919;
-  padding: 5px;
+  padding: 6px;
   font-size: 20px;
   border: none;
   border-radius: 5px;
@@ -74,12 +76,13 @@ export const StyledItemsContainer = styled.div`
 `;
 
 export const StyledItem = styled.div`
-  width: 60%;
+  width: 70%;
   letter-spacing: 2px;
   padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   button {
     margin: 0 10px;
     cursor: pointer;

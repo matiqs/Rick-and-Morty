@@ -5,6 +5,11 @@ export const Card = styled(StyledCard)`
   width: 280px;
   height: 380px;
   justify-content: space-evenly;
+  h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+  }
 `;
 
 export const FavContainer = styled.div`

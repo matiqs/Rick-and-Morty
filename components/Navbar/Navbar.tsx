@@ -19,8 +19,9 @@ const Navbar = () => {
     <div>
       <NavbarContainer>
         <FaIcons.FaBars onClick={showSideBar} />
-
-        <Image src={Logo} width={220} height={60} alt="" />
+        <Link href={"/"} passHref>
+          <Image src={Logo} width={220} height={60} alt="" />
+        </Link>
       </NavbarContainer>
       <nav
         className={sideBar ? `${style.sidebar} ${style.active}` : style.sidebar}
