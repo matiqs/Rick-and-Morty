@@ -5,12 +5,16 @@ export const LoadingContainer = styled.div`
   background-image: url(${loadingImage.src});
   background-position: center;
   height: calc(100vh - 80px);
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   h2 {
     color: #fff;
     text-shadow: 1px 1px 5px #000;
     font-size: 80px;
+  }
+  
   }
 `;

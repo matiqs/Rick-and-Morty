@@ -59,7 +59,11 @@ const Episodes = () => {
           })
         )}
       </StyledCardContainer>
-      <Pagination nextPage={nextPage} returnPage={returnPage} />
+      {!isNotFoundData ? (
+        <Pagination nextPage={nextPage} returnPage={returnPage} />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

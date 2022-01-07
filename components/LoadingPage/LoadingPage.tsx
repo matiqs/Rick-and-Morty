@@ -1,18 +1,22 @@
-import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 import { LoadingContainer } from "./StyledLoadingPage";
 
-const override = css`
-  margin-top: 30px;
-`;
+const LoadingPage = ({ loading }) => {
+  const override = css`
+    border-right: 5px solid #00dcbe;
+    border-left: 5px solid #00dcbe;
+    border-top: 5px solid #00dcbe;
+    width: 180px;
+    height: 180px;
+  `;
 
-const LoadingPage = ({ loading }: any) => {
   return (
     <LoadingContainer>
-      <h2>CARGANDO</h2>
-      <PulseLoader loading={loading} color="#00dcbe" size={30} css={override}>
+      <ClipLoader loading={true} css={override}>
         {" "}
-      </PulseLoader>
+      </ClipLoader>
+      <h2>CARGANDO...</h2>
     </LoadingContainer>
   );
 };

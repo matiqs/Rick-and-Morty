@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const IsNotFoundContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   height: 500px;
   p {
