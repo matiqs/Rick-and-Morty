@@ -16,14 +16,9 @@ export const useSearched = (setPage) => {
     }
   };
 
-  const handleSubmit = () => {
-    setFilter(inputValue);
-  };
-
   return {
     filter,
     inputValue,
     handleChange,
-    handleSubmit,
   };
 };

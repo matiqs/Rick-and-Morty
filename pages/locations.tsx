@@ -11,9 +11,11 @@ import { useEffect, useState } from "react";
 import { useSearched } from "../hooks/useSearched";
 import Searched from "../components/Searched/Searched";
 import { Location } from "../models/models";
+import IsNotFoundData from "../components/IsNotFoundData/IsNotFoundData";
 
 const Locations = () => {
   const [locations, setLocations] = useState([]);
+  const [isNotFoundData, setIsNotFoundData] = useState(false);
   const { page, setPage, nextPage, returnPage } = usePagination();
   const { filter, inputValue, handleChange, handleSubmit } =
     useSearched(setPage);
@@ -21,7 +23,10 @@ const Locations = () => {
 
   useEffect(() => {
     if (data) {
+      setIsNotFoundData(false);
       setLocations(data.locations.results);
+    } else {
+      setIsNotFoundData(true);
     }
   }, [data]);
 
@@ -42,13 +47,17 @@ const Locations = () => {
         handleSubmit={handleSubmit}
       />
       <StyledCardContainer>
-        {locations.map((element: Location, index: number) => {
-          return (
-            <div key={index}>
-              <LocationCard location={element} />
-            </div>
-          );
-        })}
+        {!loading && isNotFoundData ? (
+          <IsNotFoundData searchTerm={inputValue} />
+        ) : (
+          locations.map((element: Location, index: number) => {
+            return (
+              <div key={index}>
+                <LocationCard location={element} />
+              </div>
+            );
+          })
+        )}
       </StyledCardContainer>
       <Pagination nextPage={nextPage} returnPage={returnPage} />
     </div>

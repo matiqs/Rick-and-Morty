@@ -11,16 +11,21 @@ import LoadingPage from "../components/LoadingPage/LoadingPage";
 import Searched from "../components/Searched/Searched";
 import { useEffect, useState } from "react";
 import { Character } from "../models/models";
+import IsNotFoundData from "../components/IsNotFoundData/IsNotFoundData";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
+  const [isNotFoundData, setIsNotFoundData] = useState(false);
   const { page, setPage, nextPage, returnPage } = usePagination();
-  const { filter, inputValue, handleChange, handleSubmit } =
-    useSearched(setPage);
+  const { filter, inputValue, handleChange } = useSearched(setPage);
   const { data, loading } = useQuery(GET_ALL_CHARACTERS(page, filter));
+
   useEffect(() => {
     if (data) {
+      setIsNotFoundData(false);
       setCharacters(data.characters.results);
+    } else {
+      setIsNotFoundData(true);
     }
   }, [data]);
 
@@ -38,16 +43,19 @@ const Characters = () => {
         value={inputValue}
         searchType={"characters"}
         handleChange={handleChange}
-        handleSubmit={handleSubmit}
       />
       <StyledCardContainer>
-        {characters.map((element: Character, index: number) => {
-          return (
-            <div key={index}>
-              <CharacterCard character={element} />
-            </div>
-          );
-        })}
+        {!loading && isNotFoundData ? (
+          <IsNotFoundData searchTerm={inputValue} />
+        ) : (
+          characters.map((element: Character, index: number) => {
+            return (
+              <div key={index}>
+                <CharacterCard character={element} />
+              </div>
+            );
+          })
+        )}
       </StyledCardContainer>
       <Pagination nextPage={nextPage} returnPage={returnPage} />
     </div>

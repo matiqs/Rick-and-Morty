@@ -8,25 +8,20 @@ import { NavbarContainer, SideBarItem, SideBarMenu } from "./StyledNavbar";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
 
-const Navbar = () => {
-  const [sideBar, setSideBar] = useState(false);
-
-  const showSideBar = () => {
-    setSideBar(!sideBar);
-  };
-
+const Navbar = ({ sidebar, showSidebar }) => {
   return (
-    <div>
+    <div id="sidebar">
       <NavbarContainer>
-        <FaIcons.FaBars onClick={showSideBar} />
+        <FaIcons.FaBars onClick={showSidebar} />
         <Link href={"/"} passHref>
           <Image src={Logo} width={220} height={60} alt="" />
         </Link>
       </NavbarContainer>
+
       <nav
-        className={sideBar ? `${style.sidebar} ${style.active}` : style.sidebar}
+        className={sidebar ? `${style.sidebar} ${style.active}` : style.sidebar}
       >
-        <SideBarMenu onClick={showSideBar}>
+        <SideBarMenu onClick={showSidebar}>
           <Image src={SidebarLogo} width={250} height={250} alt="" />
           <Link href={"/"} passHref>
             <SideBarItem>
