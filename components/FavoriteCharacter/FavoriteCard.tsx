@@ -21,7 +21,7 @@ const FavoriteCard = ({ character }: { character: Character }) => {
       </Link>
       <DeleteButton onClick={() => removeToFavorites(character, toastError)}>
         <RiIcons.RiDeleteBin5Line />
-        Delete
+        <p>Delete</p>
       </DeleteButton>
       <Toaster />
     </Card>

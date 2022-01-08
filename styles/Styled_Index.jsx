@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledCardButton } from "./Styled_globals";
 
 export const StyledDashboardContainer = styled.div`
   background-color: #fff;
@@ -15,6 +16,10 @@ export const StyledDashboardHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const StyledDashboardBody = styled.div`

@@ -26,7 +26,8 @@ export const StyledCardButton = styled.button`
   padding: 6px;
   font-size: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px #666;
   cursor: pointer;
   &:hover {
     background-color: #009f9a;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import * as BsIcons from "react-icons/bs";
 import { useContext, useEffect, useState } from "react";
 import FavoriteCard from "../components/FavoriteCharacter/FavoriteCard";
-import Header from "../components/Wrapper/Wrapper";
+import Wrapper from "../components/Wrapper/Wrapper";
 import { FavContext } from "../context/FavsContext";
 import Pagination from "../components/Pagination/Pagination";
 import { StyledCardButton } from "../styles/Styled_globals";
@@ -41,11 +41,13 @@ export default function Home() {
       <Head>
         <title>{`Rick & Morty`}</title>
       </Head>
-      <Header title={"DASHBOARD"} />
+      <Wrapper title={"DASHBOARD"} />
       <StyledDashboardContainer>
         <StyledDashboardHeader>
-          <BsIcons.BsStars color="#ffd100" size={40} />
-          <p>Characters added to favorites: {favorites.length}</p>
+          <div>
+            <BsIcons.BsStars color="#ffd100" />
+            <p>Favorite characters: {favorites.length}</p>
+          </div>
           <Link href={"/characters"} passHref>
             <StyledCardButton>See all characters</StyledCardButton>
           </Link>

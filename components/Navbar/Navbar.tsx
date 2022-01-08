@@ -14,7 +14,7 @@ const Navbar = ({ sidebar, showSidebar }) => {
       <NavbarContainer>
         <FaIcons.FaBars onClick={showSidebar} />
         <Link href={"/"} passHref>
-          <Image src={Logo} width={220} height={60} alt="" />
+          <Image src={Logo} width={200} height={55} alt="" />
         </Link>
       </NavbarContainer>
 
