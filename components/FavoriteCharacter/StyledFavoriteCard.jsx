@@ -9,9 +9,11 @@ export const Card = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &.p {
-    font-size: 26px;
-  }
+`;
+
+export const CardText = styled.div`
+  width: 200px;
+  font-size: 22px;
 `;
 
 export const DeleteButton = styled(StyledCardButton)`

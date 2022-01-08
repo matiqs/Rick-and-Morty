@@ -3,7 +3,11 @@ import Link from "next/link";
 import { useContext } from "react";
 import { FavContext } from "../../context/FavsContext";
 import { StyledCardButton } from "../../styles/Styled_globals";
-import { Card, DeleteButton } from "../FavoriteCharacter/StyledFavoriteCard";
+import {
+  Card,
+  CardText,
+  DeleteButton,
+} from "../FavoriteCharacter/StyledFavoriteCard";
 import useToast from "../../hooks/useToast";
 import { Character } from "../../models/models";
 import * as RiIcons from "react-icons/ri";
@@ -15,7 +19,9 @@ const FavoriteCard = ({ character }: { character: Character }) => {
   return (
     <Card>
       <Image src={character.image} width={120} height={120} alt="" />
-      <p>{character.name}</p>
+      <CardText>
+        <p>{character.name}</p>
+      </CardText>
       <Link href={`/character/${character.id}`} passHref>
         <StyledCardButton>View detail</StyledCardButton>
       </Link>
