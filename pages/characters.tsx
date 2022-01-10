@@ -58,7 +58,10 @@ const Characters = () => {
         )}
       </StyledCardContainer>
       {!isNotFoundData ? (
-        <Pagination nextPage={nextPage} returnPage={returnPage} />
+        <Pagination
+          nextPage={characters.length > 19 ? nextPage : null}
+          returnPage={returnPage}
+        />
       ) : (
         ""
       )}

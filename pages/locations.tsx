@@ -60,7 +60,10 @@ const Locations = () => {
         )}
       </StyledCardContainer>
       {!isNotFoundData ? (
-        <Pagination nextPage={nextPage} returnPage={returnPage} />
+        <Pagination
+          nextPage={locations.length > 19 ? nextPage : null}
+          returnPage={returnPage}
+        />
       ) : (
         ""
       )}

@@ -40,9 +40,8 @@ const CharacterCard = ({ character }: { character: Character }) => {
         />
       </FavContainer>
       <Toaster />
-      <Image src={character.image} width={260} height={260} alt="" />
+      <Image src={character.image} width={260} height={240} alt="" />
       <h2>{character.name}</h2>
-
       <Link href={`/character/${character.id}`} passHref>
         <StyledCardButton>View detail</StyledCardButton>
       </Link>

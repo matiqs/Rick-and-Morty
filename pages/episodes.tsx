@@ -60,7 +60,10 @@ const Episodes = () => {
         )}
       </StyledCardContainer>
       {!isNotFoundData ? (
-        <Pagination nextPage={nextPage} returnPage={returnPage} />
+        <Pagination
+          nextPage={episodes.length > 19 ? nextPage : null}
+          returnPage={returnPage}
+        />
       ) : (
         ""
       )}

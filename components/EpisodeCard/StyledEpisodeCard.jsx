@@ -6,7 +6,8 @@ export const Card = styled(StyledCard)`
   height: 240px;
   width: 300px;
   justify-content: space-between;
-  h2 {
+  h1 {
+    font-size: 26px;
     text-align: center;
   }
 `;

@@ -6,8 +6,8 @@ export const Card = styled(StyledCard)`
   height: 380px;
   justify-content: space-evenly;
   h2 {
-    margin: 5px 0;
-    font-size: 20px;
+    margin: 4px 0;
+    font-size: 18px;
     text-align: center;
   }
 `;
