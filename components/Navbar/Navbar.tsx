@@ -10,9 +10,9 @@ import * as MdIcons from "react-icons/md";
 
 const Navbar = ({ sidebar, showSidebar }) => {
   return (
-    <div id="sidebar">
+    <div>
       <NavbarContainer>
-        <FaIcons.FaBars onClick={showSidebar} />
+        <FaIcons.FaBars onClick={showSidebar} id="sidebar" />
         <Link href={"/"} passHref>
           <Image src={Logo} width={200} height={55} alt="" />
         </Link>
