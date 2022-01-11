@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
   background-color: #121919;
-  padding: 8px;
+  padding: 0px 2vw;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,6 @@ export const NavbarContainer = styled.div`
   svg {
     background-color: none;
     color: #00dcbe;
-    margin-left: 2rem;
     font-size: 2rem;
     cursor: pointer;
   }

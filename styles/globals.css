@@ -21,3 +21,7 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+.favImage {
+  width: 500px;
+}
