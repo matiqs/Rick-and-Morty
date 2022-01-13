@@ -53,8 +53,8 @@ export const DetailsCharacterItem = styled.div`
     font-size: 18px;
   }
   svg {
+    margin-top: 6px;
     font-size: 26px;
-    margin-bottom: 6px;
   }
   @media only screen and ${breakpoints.device.xs} {
     p {

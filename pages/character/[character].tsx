@@ -37,7 +37,7 @@ const DetailCharacter = () => {
 
   useEffect(() => {
     if (data) {
-      if (favorites.find((c: Character) => c.name === data.character.name)) {
+      if (favorites.find((c: Character) => c.id === data.character.id)) {
         setAddedToFav(true);
       } else {
         setAddedToFav(false);
@@ -54,7 +54,6 @@ const DetailCharacter = () => {
   return (
     <StyledDetailsContainer>
       <StyledDetailsSection>
-        {console.log(typeof router.query.character)}
         <DetailsCharacterImage>
           <Image
             src={character.image}
@@ -67,6 +66,7 @@ const DetailCharacter = () => {
         <StyledDetailsElement>
           <DetailsCharacterHeader>
             <h1>{character.name}</h1>
+            {console.log(addedToFav)}
             <FaIcons.FaStar
               onClick={() =>
                 toggleFavorite(data.character, toastSucces, toastError)
