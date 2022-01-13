@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoints from "./breakpoints";
 
 export const StyledCardContainer = styled.div`
   width: 100%;
@@ -36,7 +37,6 @@ export const StyledCardButton = styled.button`
 `;
 
 export const StyledDetailsContainer = styled.div`
-  margin: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,19 +47,34 @@ export const StyledDetailsSection = styled.div`
   background-color: #fff;
   box-shadow: 0 0 8px #000;
   border-radius: 5px;
-  padding: 20px;
-  margin: 10px;
-  width: 1000px;
+  margin-top: 10px;
+  padding: 20px 0;
+  width: 980px;
+  text-align: center;
   display: flex;
-  justify-content: space-evenly;
-  img {
-    object-fit: cover;
+  justify-content: space-around;
+  @media only screen and ${breakpoints.device.lg} {
+    padding: 5px;
+    width: 98vw;
+  }
+  @media only screen and ${breakpoints.device.md} {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media only screen and ${breakpoints.device.sm} {
+    margin: 1px 0;
+    width: 100vw;
+    margin-top: 0;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 4vw;
   }
 `;
 
 export const StyledDetailsElement = styled.div`
+  padding: 20px 0;
   text-align: center;
-  h1 {
+  h2 {
     font-size: 50px;
   }
 `;
@@ -71,34 +86,50 @@ export const StyledItemsContainer = styled.div`
   align-items: center;
   flex-direction: column;
   h2 {
+    font-weight: 500;
     width: 100%;
     padding-bottom: 20px;
-    border-bottom: 1px solid #00dcbe;
+  }
+  @media only screen and ${breakpoints.device.md} {
+    h2 {
+      font-size: 6vw;
+    }
   }
 `;
 
 export const StyledItem = styled.div`
-  width: 70%;
+  text-align: left;
+  width: 80%;
   letter-spacing: 2px;
   padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  button {
-    margin: 0 10px;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #00dcbe;
-    border: none;
-    border-radius: 5px;
-  }
-  button:hover {
-    background-color: #009f9a;
-    transition: 0.5s;
-  }
   img {
     border-radius: 5px;
     box-shadow: 0 0 8px #000;
+  }
+  @media only screen and ${breakpoints.device.sm} {
+    padding: 8px 0;
+    font-size: 3vw;
+  }
+`;
+
+export const StyledItemBtn = styled.button`
+  background-color: #00dcbe;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px #666;
+  margin: 0 10px;
+  padding: 10px;
+  display: flex;
+  &:hover {
+    background-color: #009f9a;
+    transition: 0.5s;
+  }
+  @media only screen and ${breakpoints.device.md} {
+    p {
+      display: none;
+    }
   }
 `;

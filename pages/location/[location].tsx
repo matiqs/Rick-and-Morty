@@ -8,8 +8,10 @@ import {
   StyledDetailsElement,
   StyledDetailsSection,
   StyledItem,
+  StyledItemBtn,
   StyledItemsContainer,
 } from "../../styles/Styled_globals";
+import * as BiIcons from "react-icons/bi";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import { Character } from "../../models/models";
 
@@ -29,7 +31,7 @@ const DetailLocation = () => {
     <StyledDetailsContainer>
       <StyledDetailsSection>
         <StyledDetailsElement>
-          <h1>{`"${location.name}"`}</h1>
+          <h2>{`"${location.name}"`}</h2>
           <p>
             <b>Dimension: </b>
             {location.dimension}
@@ -51,7 +53,10 @@ const DetailLocation = () => {
                   <b>{element.name}</b>
                 </p>
                 <Link href={`/character/${element.id}`} passHref>
-                  <button>View detail</button>
+                  <StyledItemBtn>
+                    <BiIcons.BiDetail />
+                    <p>View detail</p>
+                  </StyledItemBtn>
                 </Link>
               </StyledItem>
             );

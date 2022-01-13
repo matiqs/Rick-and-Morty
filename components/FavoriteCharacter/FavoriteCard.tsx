@@ -25,7 +25,6 @@ const FavoriteCard = ({ character }: { character: Character }) => {
       <CardImage>
         <Image src={character.image} layout="fill" alt="" />
       </CardImage>
-
       <CardText>
         <p>{character.name}</p>
       </CardText>

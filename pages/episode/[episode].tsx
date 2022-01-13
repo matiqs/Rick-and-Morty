@@ -5,11 +5,13 @@ import { useRouter } from "next/router";
 import { GET_EPISODE } from "../../apollo/queries/getEpisode";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import { Character } from "../../models/models";
+import * as BiIcons from "react-icons/bi";
 import {
   StyledDetailsContainer,
   StyledDetailsElement,
   StyledDetailsSection,
   StyledItem,
+  StyledItemBtn,
   StyledItemsContainer,
 } from "../../styles/Styled_globals";
 
@@ -27,17 +29,15 @@ const DetailEpisode = () => {
     <StyledDetailsContainer>
       <StyledDetailsSection>
         <StyledDetailsElement>
-          <h1>{`"${episode.name}"`}</h1>
+          <h2>{`"${episode.name}"`}</h2>
           <p>
             <b>Episode: </b>
             {episode.episode}
           </p>
+          <p>
+            This episode aired for the first time on <b>{episode.air_date}</b>
+          </p>
         </StyledDetailsElement>
-      </StyledDetailsSection>
-      <StyledDetailsSection>
-        <p>
-          This episode aired for the first time on <b>{episode.air_date}</b>
-        </p>
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
@@ -50,7 +50,10 @@ const DetailEpisode = () => {
                   <b>{element.name}</b>
                 </p>
                 <Link href={`/character/${element.id}`} passHref>
-                  <button>View detail</button>
+                  <StyledItemBtn>
+                    <BiIcons.BiDetail />
+                    <p>View detail</p>
+                  </StyledItemBtn>
                 </Link>
               </StyledItem>
             );

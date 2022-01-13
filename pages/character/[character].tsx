@@ -5,19 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import AliveIcon from "../../components/AliveIcon/AliveIcon";
 import {
-  DetailsCharacter,
-  DetailsCharacterHeader,
-  DetailsItem,
-} from "../../components/CharacterCard/StyledCharacterCard";
-import {
   StyledDetailsContainer,
   StyledDetailsSection,
   StyledItem,
   StyledItemsContainer,
+  StyledDetailsElement,
+  StyledItemBtn,
 } from "../../styles/Styled_globals";
+import {
+  DetailsCharacterImage,
+  DetailsCharacterHeader,
+  DetailsCharacterItem,
+} from "../../styles/Styled_DetailsCharacter";
 import { useContext, useEffect, useState } from "react";
 import { FavContext } from "../../context/FavsContext";
 import * as FaIcons from "react-icons/fa";
+import * as BiIcons from "react-icons/bi";
 import useToast from "../../hooks/useToast";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import { Character, Episode } from "../../models/models";
@@ -52,14 +55,16 @@ const DetailCharacter = () => {
     <StyledDetailsContainer>
       <StyledDetailsSection>
         {console.log(typeof router.query.character)}
-        <Image
-          src={character.image}
-          width={400}
-          height={400}
-          alt={character.name}
-          title={character.name}
-        />
-        <DetailsCharacter>
+        <DetailsCharacterImage>
+          <Image
+            src={character.image}
+            layout="fill"
+            alt={character.name}
+            title={character.name}
+            objectFit="cover"
+          />
+        </DetailsCharacterImage>
+        <StyledDetailsElement>
           <DetailsCharacterHeader>
             <h1>{character.name}</h1>
             <FaIcons.FaStar
@@ -69,40 +74,39 @@ const DetailCharacter = () => {
               color={addedToFav ? "#ffd100" : "#333"}
             />
           </DetailsCharacterHeader>
-
           <Toaster />
-          <DetailsItem>
+          <DetailsCharacterItem>
             <p>
               <b>STATUS</b> {character.status}
             </p>
             <AliveIcon status={character.status} />
-          </DetailsItem>
-          <DetailsItem>
+          </DetailsCharacterItem>
+          <DetailsCharacterItem>
             <p>
               <b>SPECIES:</b> {character.species}
             </p>
-          </DetailsItem>
-          <DetailsItem>
+          </DetailsCharacterItem>
+          <DetailsCharacterItem>
             <p>
               <b>TYPE:</b> {character.type ? character.type : "unknown"}{" "}
             </p>
-          </DetailsItem>
-          <DetailsItem>
+          </DetailsCharacterItem>
+          <DetailsCharacterItem>
             <p>
               <b>GENDER</b>: {character.gender}
             </p>
-          </DetailsItem>
-          <DetailsItem>
+          </DetailsCharacterItem>
+          <DetailsCharacterItem>
             <p>
               <b>ORIGIN</b>: {character.origin.name}
             </p>
-          </DetailsItem>
-          <DetailsItem>
+          </DetailsCharacterItem>
+          <DetailsCharacterItem>
             <p>
               <b>LOCATION</b>: {character.location.name}
             </p>
-          </DetailsItem>
-        </DetailsCharacter>
+          </DetailsCharacterItem>
+        </StyledDetailsElement>
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
@@ -115,7 +119,10 @@ const DetailCharacter = () => {
                   {element.name}
                 </p>
                 <Link href={`/episode/${element.id}`} passHref>
-                  <button>View detail</button>
+                  <StyledItemBtn>
+                    <BiIcons.BiDetail />
+                    <p>View detail</p>
+                  </StyledItemBtn>
                 </Link>
               </StyledItem>
             );

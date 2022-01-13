@@ -17,13 +17,13 @@ export const FavContextProvider = ({ children }) => {
   }, [favorites]);
 
   const toggleFavorite = (character, toastSucces, toastError) => {
-    if (!favorites.find((c) => c.name === character.name)) {
+    if (!favorites.find((c) => c.id === character.id)) {
       toastSucces();
       favorites.push(character);
       setFavorites([...favorites]);
-    } else if (favorites.find((c) => c.name === character.name)) {
+    } else if (favorites.find((c) => c.id === character.id)) {
       favorites.forEach((c, index, object) => {
-        if (c.name === character.name) {
+        if (c.id === character.id) {
           toastError();
           object.splice(index, 1);
         }
@@ -34,7 +34,7 @@ export const FavContextProvider = ({ children }) => {
 
   const removeToFavorites = (character, toastError) => {
     favorites.forEach((c, index, object) => {
-      if (c.name === character.name) {
+      if (c.id === character.id) {
         toastError();
         object.splice(index, 1);
       }
