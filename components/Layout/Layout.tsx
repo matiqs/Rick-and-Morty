@@ -7,7 +7,6 @@ const Layout = ({ children }: any) => {
 
   const showSidebar = (e) => {
     if (document.getElementById("sidebar").contains(e.target)) {
-      console.log(e.target);
       setSidebar(!sidebar);
     } else {
       if (sidebar == true) {

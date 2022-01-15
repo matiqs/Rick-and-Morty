@@ -2,7 +2,13 @@ import styled from "styled-components";
 import breakpoints from "../styles/breakpoints";
 
 export const StyledDashboardContainer = styled.div`
-  background-color: #fff;
+  background: rgb(221, 221, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(221, 221, 221, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(221, 221, 221, 1) 100%
+  );
   border-radius: 5px;
   margin: 10px;
   padding: 10px;

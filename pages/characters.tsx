@@ -3,7 +3,7 @@ import Wrapper from "../components/Wrapper/Wrapper";
 import { useQuery } from "@apollo/client";
 import CharacterCard from "../components/CharacterCard/CharacterCard";
 import Pagination from "../components/Pagination/Pagination";
-import { StyledCardContainer } from "../styles/Styled_globals";
+import { StyledCardContainer, StyledContainer } from "../styles/Styled_globals";
 import { usePagination } from "../hooks/usePagination";
 import { useSearched } from "../hooks/useSearched";
 import { GET_ALL_CHARACTERS } from "../apollo/queries/getCharacter";
@@ -39,32 +39,34 @@ const Characters = () => {
         <title>Characters</title>
       </Head>
       <Wrapper title={"Characters"} />
-      <Searched
-        value={inputValue}
-        searchType={"characters"}
-        handleChange={handleChange}
-      />
-      <StyledCardContainer>
-        {!loading && isNotFoundData ? (
-          <IsNotFoundData searchTerm={inputValue} />
-        ) : (
-          characters.map((element: Character, index: number) => {
-            return (
-              <div key={index}>
-                <CharacterCard character={element} />
-              </div>
-            );
-          })
-        )}
-      </StyledCardContainer>
-      {!isNotFoundData ? (
-        <Pagination
-          nextPage={characters.length > 19 ? nextPage : null}
-          returnPage={returnPage}
+      <StyledContainer>
+        <Searched
+          value={inputValue}
+          searchType={"characters"}
+          handleChange={handleChange}
         />
-      ) : (
-        ""
-      )}
+        <StyledCardContainer>
+          {!loading && isNotFoundData ? (
+            <IsNotFoundData searchTerm={inputValue} />
+          ) : (
+            characters.map((element: Character, index: number) => {
+              return (
+                <div key={index}>
+                  <CharacterCard character={element} />
+                </div>
+              );
+            })
+          )}
+        </StyledCardContainer>
+        {!isNotFoundData ? (
+          <Pagination
+            nextPage={characters.length > 19 ? nextPage : null}
+            returnPage={returnPage}
+          />
+        ) : (
+          ""
+        )}
+      </StyledContainer>
     </div>
   );
 };

@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import breakpoints from "./breakpoints";
 
+export const StyledContainer = styled.div`
+  height: calc(100vh - 190px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const StyledCardContainer = styled.div`
   width: 100%;
   display: flex;
@@ -10,13 +17,24 @@ export const StyledCardContainer = styled.div`
 `;
 
 export const StyledCard = styled.div`
-  background-color: #fff;
+  background: rgb(221, 221, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(221, 221, 221, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(221, 221, 221, 1) 100%
+  );
   box-shadow: 0 0 8px #000;
   border-radius: 5px;
   padding: 10px;
   margin: 20px;
   display: flex;
   flex-direction: column;
+  h1,
+  h2 {
+    text-align: center;
+    font-family: "Kalam", cursive;
+  }
 `;
 
 export const StyledCardButton = styled.button`
@@ -25,7 +43,9 @@ export const StyledCardButton = styled.button`
   background-color: #00dcbe;
   color: #121919;
   padding: 6px;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
   border: none;
   border-radius: 4px;
   box-shadow: 1px 1px 4px #666;
@@ -53,6 +73,11 @@ export const StyledDetailsSection = styled.div`
   text-align: center;
   display: flex;
   justify-content: space-around;
+  h1,
+  h2 {
+    letter-spacing: 2px;
+    font-family: "Kalam", cursive;
+  }
   @media only screen and ${breakpoints.device.lg} {
     padding: 5px;
     width: 98vw;
@@ -77,6 +102,11 @@ export const StyledDetailsElement = styled.div`
   h2 {
     font-size: 50px;
   }
+  @media only screen and ${breakpoints.device.md} {
+    h2 {
+      font-size: 8vw;
+    }
+  }
 `;
 
 export const StyledItemsContainer = styled.div`
@@ -98,10 +128,12 @@ export const StyledItemsContainer = styled.div`
 `;
 
 export const StyledItem = styled.div`
+  background: #eee;
   text-align: left;
   width: 80%;
   letter-spacing: 2px;
-  padding: 10px 0;
+  padding: 10px 2px;
+  margin: 5px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,13 +147,8 @@ export const StyledItem = styled.div`
   }
 `;
 
-export const StyledItemBtn = styled.button`
-  background-color: #00dcbe;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 4px #666;
+export const StyledItemBtn = styled(StyledCardButton)`
   margin: 0 10px;
-  padding: 10px;
   display: flex;
   &:hover {
     background-color: #009f9a;

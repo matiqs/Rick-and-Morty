@@ -3,7 +3,7 @@ import { StyledCardButton } from "../../styles/Styled_globals";
 import breakpoints from "../../styles/breakpoints";
 
 export const Card = styled.div`
-  background-color: #eee;
+  background-color: #ddd;
   margin: 5px 0;
   padding: 5px 10px;
   text-align: center;
@@ -11,6 +11,7 @@ export const Card = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
+  font-family: "Kalam", cursive;
   @media only screen and ${breakpoints.device.md} {
     font-size: 20px;
   }
@@ -51,8 +52,20 @@ export const DeleteButton = styled(StyledCardButton)`
   justify-content: center;
   align-items: center;
   color: #fff;
-  background-color: #ec3636;
+  background: rgb(236, 54, 54);
+  background: linear-gradient(
+    90deg,
+    rgba(236, 54, 54, 1) 0%,
+    rgba(237, 79, 79, 1) 50%,
+    rgba(236, 54, 54, 1) 100%
+  );
   &:hover {
-    background-color: #cf3d3d;
+    background: rgb(196, 48, 48);
+    background: linear-gradient(
+      90deg,
+      rgba(196, 48, 48, 1) 0%,
+      rgba(237, 79, 79, 1) 50%,
+      rgba(196, 48, 48, 1) 100%
+    );
   }
 `;

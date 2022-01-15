@@ -44,7 +44,7 @@ const DetailLocation = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
-          <h2>Residents</h2>
+          <h3>Residents</h3>
           {location.residents.map((element: Character, index: number) => {
             return (
               <StyledItem key={index}>

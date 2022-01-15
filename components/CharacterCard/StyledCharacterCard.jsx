@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledDetailsElement, StyledCard } from "../../styles/Styled_globals";
+import { StyledCard } from "../../styles/Styled_globals";
 
 export const Card = styled(StyledCard)`
   width: 280px;

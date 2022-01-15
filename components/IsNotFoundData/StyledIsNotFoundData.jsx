@@ -5,7 +5,7 @@ export const IsNotFoundContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 500px;
+  height: 600px;
   p {
     color: #fff;
     font-weight: 400;

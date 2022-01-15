@@ -6,7 +6,7 @@ import FavoriteCard from "../components/FavoriteCharacter/FavoriteCard";
 import Wrapper from "../components/Wrapper/Wrapper";
 import { FavContext } from "../context/FavsContext";
 import Pagination from "../components/Pagination/Pagination";
-import { StyledCardButton } from "../styles/Styled_globals";
+import { StyledCardButton, StyledContainer } from "../styles/Styled_globals";
 import {
   StyledDashboardContainer,
   StyledDashboardHeader,
@@ -42,29 +42,31 @@ export default function Home() {
         <title>{`Rick & Morty`}</title>
       </Head>
       <Wrapper title={"DASHBOARD"} />
-      <StyledDashboardContainer>
-        <StyledDashboardHeader>
-          <div>
-            <BsIcons.BsStars color="#ffd100" />
-            <p>Favorite characters: {favorites.length}</p>
-          </div>
-          <Link href={"/characters"} passHref>
-            <StyledCardButton>See all characters</StyledCardButton>
-          </Link>
-        </StyledDashboardHeader>
-        <StyledDashboardBody>
-          {favorites
-            .slice(index - 10, index)
-            .map((element: Character, index: number) => {
-              return (
-                <div key={index}>
-                  <FavoriteCard character={element} />
-                </div>
-              );
-            })}
-        </StyledDashboardBody>
-      </StyledDashboardContainer>
-      <Pagination nextPage={nextPage} returnPage={returnPage} />
+      <StyledContainer>
+        <StyledDashboardContainer>
+          <StyledDashboardHeader>
+            <div>
+              <BsIcons.BsStars color="#ffd100" />
+              <p>Favorite characters: {favorites.length}</p>
+            </div>
+            <Link href={"/characters"} passHref>
+              <StyledCardButton>See all characters</StyledCardButton>
+            </Link>
+          </StyledDashboardHeader>
+          <StyledDashboardBody>
+            {favorites
+              .slice(index - 10, index)
+              .map((element: Character, index: number) => {
+                return (
+                  <div key={index}>
+                    <FavoriteCard character={element} />
+                  </div>
+                );
+              })}
+          </StyledDashboardBody>
+        </StyledDashboardContainer>
+        <Pagination nextPage={nextPage} returnPage={returnPage} />
+      </StyledContainer>
     </div>
   );
 }

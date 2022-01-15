@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useQuery } from "@apollo/client";
-import { StyledCardContainer } from "../styles/Styled_globals";
+import { StyledCardContainer, StyledContainer } from "../styles/Styled_globals";
 import Wrapper from "../components/Wrapper/Wrapper";
 import Pagination from "../components/Pagination/Pagination";
 import EpisodeCard from "../components/EpisodeCard/EpisodeCard";
@@ -40,33 +40,35 @@ const Episodes = () => {
         <title>Episodes</title>
       </Head>
       <Wrapper title={"Episodes"} />
-      <Searched
-        value={inputValue}
-        searchType={"episodes"}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      <StyledCardContainer>
-        {!loading && isNotFoundData ? (
-          <IsNotFoundData searchTerm={inputValue} />
-        ) : (
-          episodes.map((element: Episode, index: number) => {
-            return (
-              <div key={index}>
-                <EpisodeCard episode={element} />
-              </div>
-            );
-          })
-        )}
-      </StyledCardContainer>
-      {!isNotFoundData ? (
-        <Pagination
-          nextPage={episodes.length > 19 ? nextPage : null}
-          returnPage={returnPage}
+      <StyledContainer>
+        <Searched
+          value={inputValue}
+          searchType={"episodes"}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
         />
-      ) : (
-        ""
-      )}
+        <StyledCardContainer>
+          {!loading && isNotFoundData ? (
+            <IsNotFoundData searchTerm={inputValue} />
+          ) : (
+            episodes.map((element: Episode, index: number) => {
+              return (
+                <div key={index}>
+                  <EpisodeCard episode={element} />
+                </div>
+              );
+            })
+          )}
+        </StyledCardContainer>
+        {!isNotFoundData ? (
+          <Pagination
+            nextPage={episodes.length > 19 ? nextPage : null}
+            returnPage={returnPage}
+          />
+        ) : (
+          ""
+        )}
+      </StyledContainer>
     </div>
   );
 };

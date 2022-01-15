@@ -24,6 +24,7 @@ import * as BiIcons from "react-icons/bi";
 import useToast from "../../hooks/useToast";
 import LoadingPage from "../../components/LoadingPage/LoadingPage";
 import { Character, Episode } from "../../models/models";
+import { StatusContainer } from "../../components/AliveIcon/StyledAliveIcon";
 
 const DetailCharacter = () => {
   const [addedToFav, setAddedToFav] = useState(false);
@@ -66,7 +67,6 @@ const DetailCharacter = () => {
         <StyledDetailsElement>
           <DetailsCharacterHeader>
             <h1>{character.name}</h1>
-            {console.log(addedToFav)}
             <FaIcons.FaStar
               onClick={() =>
                 toggleFavorite(data.character, toastSucces, toastError)
@@ -76,10 +76,12 @@ const DetailCharacter = () => {
           </DetailsCharacterHeader>
           <Toaster />
           <DetailsCharacterItem>
-            <p>
-              <b>STATUS</b> {character.status}
-            </p>
-            <AliveIcon status={character.status} />
+            <StatusContainer>
+              <p>
+                <b>STATUS</b> {character.status}
+              </p>
+              <AliveIcon status={character.status} />
+            </StatusContainer>
           </DetailsCharacterItem>
           <DetailsCharacterItem>
             <p>
@@ -110,7 +112,7 @@ const DetailCharacter = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
-          <h2>Episodes where it appears:</h2>
+          <h3>Episodes where it appears:</h3>
           {character.episode.map((element: Episode, index: number) => {
             return (
               <StyledItem key={index}>

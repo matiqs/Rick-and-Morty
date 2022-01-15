@@ -23,7 +23,6 @@ export const DetailsCharacterHeader = styled.div`
     text-align: center;
   }
   svg {
-    margin-top: 5px;
     font-size: 36px;
     cursor: pointer;
   }
@@ -41,20 +40,24 @@ export const DetailsCharacterHeader = styled.div`
 `;
 
 export const DetailsCharacterItem = styled.div`
-  height: 50px;
-  margin: 5px 0;
+  background: #eee;
+  width: 100%;
+  margin: 10px 2px;
   margin-left: 5px;
   padding: 10px 0;
   letter-spacing: 2px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   p {
     font-size: 18px;
   }
   svg {
     margin-top: 6px;
     font-size: 26px;
+  }
+  @media only screen and ${breakpoints.device.md} {
+    justify-content: center;
   }
   @media only screen and ${breakpoints.device.xs} {
     p {

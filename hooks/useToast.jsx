@@ -4,7 +4,7 @@ import * as AiIcons from "react-icons/ai";
 const useToast = () => {
   const toastSucces = () =>
     toast.success("Added to favorites!", {
-      duration: 800,
+      duration: 1000,
       style: {
         padding: "14px",
         fontSize: "20px",
@@ -14,7 +14,7 @@ const useToast = () => {
 
   const toastWarning = () =>
     toast("already added to favorites...", {
-      duration: 800,
+      duration: 1000,
       icon: <AiIcons.AiFillWarning color="#E7C435" />,
       style: {
         padding: "14px",
@@ -25,7 +25,7 @@ const useToast = () => {
 
   const toastError = () =>
     toast.error("Removed from favorites...", {
-      duration: 800,
+      duration: 1000,
       style: {
         padding: "14px",
         borderRadius: "5px",

@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import breakpoints from "../../styles/breakpoints";
 
 export const SearchedContainer = styled.div`
   padding: 20px;
   display: flex;
   justify-content: flex-end;
+  @media only screen and ${breakpoints.device.md} {
+    justify-content: center;
+  }
 `;
 
 export const Search = styled.div`

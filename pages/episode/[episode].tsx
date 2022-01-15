@@ -41,7 +41,7 @@ const DetailEpisode = () => {
       </StyledDetailsSection>
       <StyledDetailsSection>
         <StyledItemsContainer>
-          <h2>Characters that appear</h2>
+          <h3>Characters that appear</h3>
           {episode.characters.map((element: Character, index: number) => {
             return (
               <StyledItem key={index}>
