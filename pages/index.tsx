@@ -54,15 +54,13 @@ export default function Home() {
             </Link>
           </StyledDashboardHeader>
           <StyledDashboardBody>
-            {favorites
-              .slice(index - 10, index)
-              .map((element: Character, index: number) => {
-                return (
-                  <div key={index}>
-                    <FavoriteCard character={element} />
-                  </div>
-                );
-              })}
+            {favorites.slice(index - 10, index).map((element: Character) => {
+              return (
+                <div key={element.id}>
+                  <FavoriteCard character={element} />
+                </div>
+              );
+            })}
           </StyledDashboardBody>
         </StyledDashboardContainer>
         <Pagination nextPage={nextPage} returnPage={returnPage} />

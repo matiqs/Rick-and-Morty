@@ -49,9 +49,9 @@ const Characters = () => {
           {!loading && isNotFoundData ? (
             <IsNotFoundData searchTerm={inputValue} />
           ) : (
-            characters.map((element: Character, index: number) => {
+            characters.map((element: Character) => {
               return (
-                <div key={index}>
+                <div key={element.id}>
                   <CharacterCard character={element} />
                 </div>
               );

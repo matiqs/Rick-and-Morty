@@ -19,33 +19,18 @@ export const FavContextProvider = ({ children }) => {
   const toggleFavorite = (character, toastSucces, toastError) => {
     if (!favorites.find((c) => c.id === character.id)) {
       toastSucces();
-      favorites.push(character);
-      setFavorites([...favorites]);
-    } else if (favorites.find((c) => c.id === character.id)) {
-      favorites.forEach((c, index, object) => {
-        if (c.id === character.id) {
-          toastError();
-          object.splice(index, 1);
-        }
+      setFavorites([character, ...favorites]);
+    } else {
+      const newFavorites = favorites.filter((element) => {
+        return element.id != character.id;
       });
-      setFavorites([...favorites]);
+      toastError();
+      setFavorites(newFavorites);
     }
   };
 
-  const removeToFavorites = (character, toastError) => {
-    favorites.forEach((c, index, object) => {
-      if (c.id === character.id) {
-        toastError();
-        object.splice(index, 1);
-      }
-    });
-    setFavorites([...favorites]);
-  };
-
   return (
-    <FavContext.Provider
-      value={{ favorites, toggleFavorite, removeToFavorites }}
-    >
+    <FavContext.Provider value={{ favorites, toggleFavorite }}>
       {children}
     </FavContext.Provider>
   );

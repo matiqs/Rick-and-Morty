@@ -42,9 +42,9 @@ const DetailEpisode = () => {
       <StyledDetailsSection>
         <StyledItemsContainer>
           <h3>Characters that appear</h3>
-          {episode.characters.map((element: Character, index: number) => {
+          {episode.characters.map((element: Character) => {
             return (
-              <StyledItem key={index}>
+              <StyledItem key={element.id}>
                 <Image src={element.image} width={60} height={60} alt="" />
                 <p>
                   <b>{element.name}</b>

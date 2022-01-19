@@ -15,8 +15,8 @@ import * as RiIcons from "react-icons/ri";
 import * as BiIcons from "react-icons/bi";
 
 const FavoriteCard = ({ character }: { character: Character }) => {
-  const { removeToFavorites } = useContext(FavContext);
-  const { Toaster, toastError } = useToast();
+  const { toggleFavorite } = useContext(FavContext);
+  const { Toaster, toastError, toastSucces } = useToast();
 
   console.log(character.image);
 
@@ -34,7 +34,9 @@ const FavoriteCard = ({ character }: { character: Character }) => {
           <p>View detail</p>
         </DetailSButton>
       </Link>
-      <DeleteButton onClick={() => removeToFavorites(character, toastError)}>
+      <DeleteButton
+        onClick={() => toggleFavorite(character, toastSucces, toastError)}
+      >
         <RiIcons.RiDeleteBin5Line />
         <p>Delete</p>
       </DeleteButton>

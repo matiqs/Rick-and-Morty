@@ -51,9 +51,9 @@ const Locations = () => {
           {!loading && isNotFoundData ? (
             <IsNotFoundData searchTerm={inputValue} />
           ) : (
-            locations.map((element: Location, index: number) => {
+            locations.map((element: Location) => {
               return (
-                <div key={index}>
+                <div key={element.id}>
                   <LocationCard location={element} />
                 </div>
               );

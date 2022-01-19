@@ -113,9 +113,9 @@ const DetailCharacter = () => {
       <StyledDetailsSection>
         <StyledItemsContainer>
           <h3>Episodes where it appears:</h3>
-          {character.episode.map((element: Episode, index: number) => {
+          {character.episode.map((element: Episode) => {
             return (
-              <StyledItem key={index}>
+              <StyledItem key={element.id}>
                 <p>
                   <b>{element.episode}: </b>
                   {element.name}

@@ -51,9 +51,9 @@ const Episodes = () => {
           {!loading && isNotFoundData ? (
             <IsNotFoundData searchTerm={inputValue} />
           ) : (
-            episodes.map((element: Episode, index: number) => {
+            episodes.map((element: Episode) => {
               return (
-                <div key={index}>
+                <div key={element.id}>
                   <EpisodeCard episode={element} />
                 </div>
               );
